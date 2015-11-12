@@ -3,11 +3,13 @@
 	<h1>Showing selected aticle</h1>
 </div>
 <div class="formContainer" style="background-color: lightgrey; width: 25%; margin-left: auto; margin-right: auto; padding-bottom: 1%; margin-top: 0%;">
-	<div class="resultContainer" style="background-color: grey; width: 90%; margin-left: auto; margin-right: auto">
+	<div class="resultContainer" style="width: 90%; margin-left: auto; margin-right: auto">
 		<h3>Title: <%= @article.title %></h3>
 	</div>
-	<div class="resultContainer" style="background-color: grey; width: 90%; margin-left: auto; margin-right: auto">
+	<div class="resultContainer" style="width: 90%; margin-left: auto; margin-right: auto">
 		<h3>Description: <%= @article.description %></h3>
 	</div>
+	<button><%= link_to 'Back to article', articles_path %></button>
+	<button><%= link_to 'Edit', edit_article_path(@article) %></button>
 </div
 </body>
