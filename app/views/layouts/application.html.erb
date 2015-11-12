@@ -8,37 +8,13 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-			<a class="navbar-brand" href="#">Storm</a>
-    </div>
-
-    <div class="collapse navbar-collapse">
-    	<ul class="nav navbar-nav">
-    		<li><%= link_to 'home', root_path %></li>
-    		<li><%= link_to 'about', about_path%></li>
-    	</ul>
-    </div>
-  </div>
-</nav>
+<%= render 'layouts/header' %>
 
 <body>
 
-<% flash.each do |name, msg| %>
-	<ul>
-		<li><%= msg%></li>
-	</ul>
-<% end %>
+<%= render 'layouts/messages' %>
 <%= yield %>
-
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
-  <div class="container">
- 		<p class="navbar-text" style="margin-left: -20%;">Created by <a href="#">Adam Parker</a>	</p>
- 		<p class="navbar-text" style="margin-left: 35%;"> | <a href="#">Programming languages</a> | <a href="#">test</a> | <a href="#">test</a> |</p>
- 		<p class="navbar-text" style="float: right;"> <a href="#"> Linkedin</a> <br /> <a href="#">Twitter</a> </p>
-  </div>
-</nav>
+<%= render 'layouts/footer' %>
 
 </body>
 </html>
