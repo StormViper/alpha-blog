@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
 </head>
 
 <%= render 'layouts/header' %>
@@ -13,7 +13,11 @@
 <body>
 
 <%= render 'layouts/messages' %>
+
+<div class="container">
 <%= yield %>
+</div>
+
 <%= render 'layouts/footer' %>
 
 </body>
