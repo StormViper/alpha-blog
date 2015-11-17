@@ -21,8 +21,15 @@
                     <li><a href="#">One more separated link</a></li>
                     </ul></li>
         </ul></li>
-
-            <li>
+            <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+            <li><%= link_to "Welcome, #{current_user.username}", user_path(current_user), id: "listItem"%></li>
+                <li><%= link_to "Log out", logout_path, method: :delete, id: "listItem" %></li>
+            <% else %>
+                <li><%= link_to "Log in", login_path, id: "listItem" %></li>
+                <li><%= link_to "Sign up", signup_path, id: "listItem" %></li>
+            <% end %>
+            </ul>
     	</ul>
     </div>
   </div>
