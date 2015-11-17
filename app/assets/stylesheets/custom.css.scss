@@ -17,6 +17,11 @@ $navbar-inverse-bg: black;
 	text-decoration: none;
 }
 
+#listItem {
+	font-weight: bold;
+	color: #fff;
+}
+
 /* Classes */
 .center {
 	text-align: center;
@@ -45,6 +50,15 @@ $navbar-inverse-bg: black;
 	font-size: 1.7em;
 	background-color: black;
 	border-color: darkred;
+}
+
+.article-actions {
+	border-top: 1px solid #eaeaea;
+	padding-top: 5px;
+}
+
+.description {
+	margin-top: 0;
 }
 
 footer {
