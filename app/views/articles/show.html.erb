@@ -1,13 +1,13 @@
-<body style="text-align: center;">
-	<h1>Showing selected aticle</h1>
-<div class="formContainer" style="background-color: lightgrey; width: 25%; margin-left: auto; margin-right: auto; padding-bottom: 1%; margin-top: 0%;">
-	<div class="resultContainer" style="width: 90%; margin-left: auto; margin-right: auto">
-		<h3>Title: <%= @article.title %></h3>
+<h1 align="center">Title: <%= @article.title %></h1>
+
+<div class="well col-xs-8 col-xs-offset-2">
+	<h4 class="center description"><strong>Description:</strong></h4>
+	<hr />
+		<%= simple_format(@article.description) %>
+	<div class="article-actions">
+		<%= link_to 'Edit', edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+		<%= link_to 'Delete this article', article_path(@article), method: :delete,
+																			 data: { confirm: "Are you sure you want to delete this article?" },
+																			 class: "btn btn-xs btn-danger" %>
+		<%= link_to 'View all articles', articles_path, class: "btn btn-xs btn-success" %>
 	</div>
-	<div class="resultContainer" style="width: 90%; margin-left: auto; margin-right: auto">
-		<h3>Description: <%= @article.description %></h3>
-	</div>
-	<button><%= link_to 'Back to article', articles_path %></button>
-	<button><%= link_to 'Edit', edit_article_path(@article) %></button>
-</div
-</body>
