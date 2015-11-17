@@ -1,4 +1,10 @@
+<% if !logged_in? %>
 <div class="center jumbotron">
 	<h1>Alpha Blog</h1>
-	<%= link_to "Sign up", "#", class: "btn btn-danger btn-primary btn-lg btn-xlarge" %>
+	<%= link_to "Sign up", signup_path, class: "btn btn-danger btn-primary btn-lg btn-xlarge" %>
 </div>
+<% else %>
+<div class="center jumbotron" id="logged">
+	<h1 style="color: white;">Welcome <%= current_user.username%></h1>
+</div>
+<% end %>

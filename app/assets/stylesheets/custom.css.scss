@@ -38,6 +38,12 @@ $navbar-inverse-bg: black;
 	height: 650px;
 }
 
+.jumbotron#logged {
+	background-image: asset-url('background-log.jpg');
+	background-size: cover;
+	height: 650px;
+}
+
 .jumbotron h1 {
 	font-weight: bold;
 	color: #fff;
