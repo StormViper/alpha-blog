@@ -1,36 +1,49 @@
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-            <%= link_to 'Storm', root_path, class: "navbar-brand", id: "logo" %>
-    </div>
-
-    <div class="collapse navbar-collapse">
-    	<ul class="nav navbar-nav">
-    		<li><%= link_to 'Articles', articles_path, id: "listItem" %></li>
-    		<li><%= link_to 'about', about_path, id: "listItem"%></li>
-
-            <li><li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="listItem">Actions <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><%= link_to "New article", new_article_path %></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                    </ul></li>
-        </ul></li>
-            <ul class="nav navbar-nav navbar-right">
-            <% if logged_in? %>
-            <li><%= link_to "Welcome, #{current_user.username}", user_path(current_user), id: "listItem"%></li>
-                <li><%= link_to "Log out", logout_path, method: :delete, id: "listItem" %></li>
-            <% else %>
-                <li><%= link_to "Log in", login_path, id: "listItem" %></li>
-                <li><%= link_to "Sign up", signup_path, id: "listItem" %></li>
-            <% end %>
-            </ul>
-    	</ul>
-    </div>
-  </div>
+<div class="container-fluid">
+<div class="navbar-header">
+  <%= link_to 'Storm', root_path, class: "navbar-brand", id: "logo" %>
+</div>
+<div class="collapse navbar-collapse">
+  <ul class="nav navbar-nav">
+    <li><%= link_to 'Articles', articles_path, id: "listItem" %></li>
+    <li><%= link_to 'about', about_path, id: "listItem"%></li>
+    <li><li class="dropdown">
+<%  #First dropdown menu - based on actions users can do
+    #For example creating a new article and more functions in the future
+    %>
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="listItem">Actions <span class="caret"></span></a>
+<ul class="dropdown-menu">
+  <li><%= link_to "New article", new_article_path %></li>
+  <li><a href="#">Another action</a></li>
+  <li><a href="#">Something else here</a></li>
+  <li role="separator" class="divider"></li>
+  <li><a href="#">Separated link</a></li>
+  <li role="separator" class="divider"></li>
+  <li><a href="#">One more separated link</a></li>
+</ul></li></ul></li>
+<% #Right hand section if the user is logged in then display the welcome section and
+   #Displays the second drop down menu which is based on the user profile actions 
+   %>
+<ul class="nav navbar-nav navbar-right">
+<% if logged_in? %>
+  <li><%= link_to "Welcome, #{current_user.username}", user_path(current_user), id: "listItem"%></li>
+  <li><li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="listItem">Your profile <span class="caret"></span></a>
+<ul class="dropdown-menu">
+  <li><%= link_to "View your profile", user_path(current_user) %></li>
+  <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
+  <li><a href="#">Something else here</a></li>
+  <li role="separator" class="divider"></li>
+  <li><a href="#">Separated link</a></li>
+  <li role="separator" class="divider"></li>
+  <li><a href="#"><%= link_to "Log out", logout_path, method: :delete %></a></li>
+</ul></li></ul></li>
+<% else %>
+  <li><%= link_to "Log in", login_path, id: "listItem" %></li>
+  <li><%= link_to "Sign up", signup_path, id: "listItem" %></li>
+ <% end %>
+</ul>
+</ul>
+</div>
+</div>
 </nav>
