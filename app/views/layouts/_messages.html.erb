@@ -3,10 +3,10 @@
 	<div id="alertDismiss">
 		<% flash.each do |name, msg| %>
 			<div class='alert alert-<%= "#{name}" %>'>
-				<a href="#" class="close">&#215;</a>
+				<a href="#" class="close" onClick="destroy()">&#215;</a>
 				<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
 			</div>
-<% end %>
-	</div>
+		</div>
+		<% end %>
 	</div>
 </div>
